@@ -152,8 +152,8 @@ export const DailyCanvas: React.FC = () => {
   
   // Tasks on the schedule
   const scheduledTasks = todayTasks.filter(t => t.timeSlot)
-  // Tasks not yet scheduled (backlog) for the active date
-  const unscheduledTasks = todayTasks.filter(t => !t.timeSlot)
+  // Tasks not yet scheduled (backlog) for the active date and not completed
+  const unscheduledTasks = todayTasks.filter(t => !t.timeSlot && !t.completed)
 
   // Parse time slots like "08:15 AM - 09:30 AM"
   const parseTimeSlot = (slot: string) => {
